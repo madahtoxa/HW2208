@@ -9,7 +9,7 @@ public class Main {
 
     }
 
-    public static void userMobile(int osUser, int year) {
+    private static void userMobile(int osUser, int year) {
         int currentYear = LocalDate.now().getYear();
         if (osUser == 0 && year == currentYear) {
             System.out.println("Установите версию приложения для iOS по ссылке");
@@ -22,14 +22,15 @@ public class Main {
         } else System.out.println("Некорретные данные");
     }
 
-    public static void delivery(int deliveryDistance, int startInterval, int deliveryDays, int interval) {
-        if (deliveryDistance <= startInterval) {
-            deliveryDays = 1;
-        } else {
-            deliveryDays = deliveryDays + (int) Math.ceil((deliveryDistance - startInterval) / (double) interval);
+    private static void delivery(int distance) {
+        int step = 40;
+        int result = 1;
+        if (distance >= 20) {
+            result = ((distance - 20) / step) + 2;
         }
-        System.out.println("Дней на доставку "+deliveryDays);
+        System.out.println("Дней на доставку " + result);
     }
+
     public static void main(String[] args) {
         System.out.println("Задание 1");
         double yearHW3 = 2024;
@@ -38,7 +39,7 @@ public class Main {
         System.out.println("Задание 2");
         userMobile(1, 2022);
 
-        System.out.println("Задание 4");
-        delivery(95,1,20,40);
+        System.out.println("Задание 3");
+        delivery(95);
     }
 }
