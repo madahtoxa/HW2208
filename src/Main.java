@@ -2,10 +2,11 @@ import java.time.LocalDate;
 
 public class Main {
     public static void leapYear(double yearHW3) {
-        if (yearHW3 / 4 % 1 == 0 && yearHW3 % 100 != 0 || yearHW3 % 400 == 0) {
+        if ((yearHW3 % 4 == 0) && (yearHW3 % 100 != 0) || (yearHW3 % 400 == 0)) {
             System.out.println(yearHW3 + " год высокосный");
-        } else
+        } else {
             System.out.println(yearHW3 + " не высокосный");
+        }
 
     }
 
@@ -19,7 +20,9 @@ public class Main {
             System.out.println("Установите версию приложения для android по ссылке");
         } else if (osUser == 1 && year < currentYear) {
             System.out.println("Установите облегченную версию приложения для android по ссылке");
-        } else System.out.println("Некорретные данные");
+        } else {
+            System.out.println("Некорретные данные");
+        }
     }
 
     private static void delivery(int distance) {
@@ -33,7 +36,7 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Задание 1");
-        double yearHW3 = 2024;
+        double yearHW3 = 2004;
         leapYear(yearHW3);
 
         System.out.println("Задание 2");
