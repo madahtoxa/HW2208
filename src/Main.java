@@ -25,13 +25,14 @@ public class Main {
         }
     }
 
-    private static void delivery(int distance) {
+    private static int delivery(int distance) {
         int step = 40;
         int result = 1;
         if (distance >= 20) {
             result = ((distance - 20) / step) + 2;
         }
         System.out.println("Дней на доставку " + result);
+        return result;
     }
 
     public static void main(String[] args) {
